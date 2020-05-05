@@ -1,0 +1,37 @@
+封装：
+class Student:
+    def __init__(self,age):
+        self.__age = age
+
+    @property
+    def age(self):
+        return self.__age
+
+    @age.setter
+    def age(self,age):
+        self.__age = age
+
+s = Student()
+s.age = 10
+
+
+继承：
+is a ：
+    父类，子类
+    共同的， 独特的
+    class Student(Person):
+        pass
+has a :
+    class Student:
+        def __init__(self,book,computer):
+            book 是自定义类型和系统类型本质是等价的。
+多继承：
+1个子可以有多个父。
+若A，B父有相同名函数，搜索顺序广度优先
+C.__mro__
+
+多态：
+class Person:
+    def feed_pet(self,pet):
+        if isinstance(pet,Pet):
+            print("OK! It is a pet")
