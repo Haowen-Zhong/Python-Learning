@@ -1,4 +1,4 @@
-__all__ = ['add','number']
+__all__ = ['add','number']#只是针对from xxx import * 起作用而已
 #变量
 number = 100
 name = 'calculation'

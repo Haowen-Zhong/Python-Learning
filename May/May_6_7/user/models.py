@@ -10,3 +10,6 @@ class User:
 			print("登陆失败")
 	def show(self):
 		print(f"{self.username},{self.password}")
+
+	def publish_article(self,article):
+		print(f"{self.username}发表了{article.name}")
