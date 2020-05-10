@@ -1,0 +1,41 @@
+正则表达式：
+re 模块
+
+re.match()
+re.search()
+re.findall()
+re.sub(pattern,'new',str) 替换
+re.split(pattern,str) ---> []
+
+基础：
+. 任意字符
+[] 范围
+| 或者
+() 一组
+量词：
+* >=0
++ >=1
+? 0 or 1
+{m} = m
+{m,} >= m
+{m,n} >= m <=n
+
+预定义:
+\s space
+\S not space
+\d digit
+\D not digit
+\w word [0-9a-zA-Z]
+\W not word [^]
+\b 边界
+\B 非边界
+
+分组：
+() ----> group(i)
+
+number
+(\w+)(\d*)   ---->  group(1) group(2)
+引用：
+(\w+)(\d*)   \1 \2 表示引用前面的内容
+如果内容太多了容易出错就可以起名:
+(?P<name>\w+)  只要是满足\w+的这种正则就起个名字 (?P=name)

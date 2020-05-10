@@ -35,13 +35,28 @@ print(result.group(2))
 
 
 msg = '<html>abc</html>'
-msg1 = '<html><h1>hello</h1></html>'
 result = re.match(r'<[0-9a-zA-Z]+>(.+)</[0-9a-zA-Z]+>',msg)
 print(result.group(1))#因为只有1个括号！
 print(result.group())
 
 #number
-result = re.match(r'<([0-9a-zA-Z])+>(.+)</[(/1)]+>$',msg)
-print(result.group())
-result = re.match(r'<([0-9a-zA-Z])+>(.+)</[(/1)]+>$',msg1)
+#这边挺难的，需要细心一点思考🤔
+msg = '<html><h1>abc</h1>'
+msg1 = '<h1>hello</h1>'
+result = re.match(r'<([0-9a-zA-Z]+)>(.+)</\1>$',msg)
 print(result)
+result = re.match(r'<([0-9a-zA-Z]+)>(.+)</\1>$',msg1)
+print(result)
+print(result.group(1))
+print(result.group(2))
+
+msg = '<html><h1>abc</h1></html>'
+msg1 = '<html><h1>abc</html></h1>'
+result = re.match(r'<([0-9a-zA-Z]+)><([0-9a-zA-Z]+)>(.+)</\2></\1>$',msg)
+print(result.group())
+print(result.group(0))
+print(result.group(1))
+print(result.group(2))
+result = re.match(r'<([0-9a-zA-Z]+)><([0-9a-zA-Z]+)>(.+)</\2></\1>$',msg1)
+print(result)
+
