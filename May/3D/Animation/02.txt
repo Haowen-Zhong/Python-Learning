@@ -1,0 +1,40 @@
+'''
+FuncAnimation!!!
+'''
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import  Animation
+from matplotlib.animation import  FuncAnimation
+from matplotlib.animation import  ArtistAnimation
+from mpl_toolkits.mplot3d import Axes3D
+
+'''
+*fig*:Figure 相当于画布
+
+*func*:callable 一个变换的函数关系。The function to call each FRAME!
+	并且第一个参数会成为next value in frames简单说就是frame作为参数传给func！
+	def func(frame, *fargs) -> iterable_of_artists
+	如果blit == True:那么就更新全部点，如果blit == False:只更新需要更新的点
+	注意了如果是True 那我们的函数就需要返回一个可迭代量。如果False它直接忽略你的return value
+
+*frames*:iterable,int,generator function, or None, optional
+	Source of data to pass func and each frame of the animation
+	简单来说就是传给函数的值，我下一步怎么变换？就由我的frames来告诉我
+	
+*init_func*：callable，optional
+	A function used to draw a clear frame. If not given, the results of drawing 
+	from the first item in the frames sequence will be used. This function will 
+	be called once before the first frame.
+*fargs*：tuple or None，optional
+		我们希望传给函数的其他参数
+*save_count*:int default=100(没明白，不管)
+*interval*:number,optional 帧与帧之间的间隔 默认200毫秒
+*repeat_delay*：number，optional 默认没有时间间隔
+*repeat*：默认重复
+*blit*：之前提到了
+*cache_frame_data*bool,optional
+	判断是否缓存，默认是的
+
+Methods：
+save(self,filename[,writer,fps,dpi,...])
+'''
